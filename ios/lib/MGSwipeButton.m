@@ -86,14 +86,14 @@
     NSLog(@"Font family is %@ and font size is %f",fontFamily,fontSize);
     
     button.backgroundColor = color;
-    button.titleLabel.font = [UIFont fontWithName:fontFamily size:fontSize];
+//    button.titleLabel.font = [UIFont fontWithName:fontFamily size:fontSize];
     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    if (icon) {
-        [button setImage:icon forState:UIControlStateNormal];
-    }
+//    if (icon) {
+//        [button setImage:icon forState:UIControlStateNormal];
+//    }
     button.callback = callback;
     return button;
 }

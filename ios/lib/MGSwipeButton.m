@@ -83,6 +83,7 @@
     MGSwipeButton * button = [self buttonWithType:UIButtonTypeCustom];
     NSString* fontFamily = [labelDict objectForKey:@"fontFamily"] ? [labelDict objectForKey:@"fontFamily"] : @"Arial";
     int fontSize = [labelDict objectForKey:@"fontSize"] ? (int)[labelDict objectForKey:@"fontSize"] : 12;
+    NSLog(@"Font family is %@ and font size is %d",fontFamily,fontSize);
     
     button.backgroundColor = color;
     button.titleLabel.font = [UIFont fontWithName:fontFamily size:fontSize];

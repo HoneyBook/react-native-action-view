@@ -170,7 +170,7 @@ RCT_CUSTOM_VIEW_PROPERTY(rightExpansionSettings, NSDictionary, RCMGSwipeView)
 	[buttonsData enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull buttonData, NSUInteger idx, BOOL * _Nonnull stop) {
 		UIColor* color = buttonData[@"color"] ? [RCTConvert UIColor:buttonData[@"color"]] : [UIColor redColor];
 		NSString* title = buttonData[@"title"] ?: NSLocalizedString(@"Title", @"");
-        NSDictionary* labelStyleDict = buttonData[@"labelStyle"] ? [RCTConvert NSDictionary:buttonData[@"labelStyle"]] : nil;
+        NSDictionary* labelStyleDict = buttonData[@"labelStyle"] ?: [RCTConvert NSDictionary:buttonData[@"labelStyle"]];
 		
         MGSwipeButton* button = [MGSwipeButton buttonWithTitle:title icon:nil backgroundColor:color labelStyle:labelStyleDict callback:^BOOL(MGSwipeView *sender) {
             RCMGSwipeView* rcView = (id)[sender superview];

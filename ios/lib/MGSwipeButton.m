@@ -93,6 +93,7 @@
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     if (icon) {
         [button setImage:icon forState:UIControlStateNormal];
+        [button centerIconOverText];
     }
     button.callback = callback;
     [button setEdgeInsets:insets];

@@ -170,19 +170,33 @@ RCT_CUSTOM_VIEW_PROPERTY(rightExpansionSettings, NSDictionary, RCMGSwipeView)
 	[buttonsData enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull buttonData, NSUInteger idx, BOOL * _Nonnull stop) {
 		UIColor* color = buttonData[@"color"] ? [RCTConvert UIColor:buttonData[@"color"]] : [UIColor redColor];
 		NSString* title = buttonData[@"title"] ?: NSLocalizedString(@"Title", @"");
+        NSDictionary* labelStyleDict = buttonData[@"labelStyle"] ? [RCTConvert NSDictionary:buttonData[@"labelStyle"]] : nil;
 		
-		MGSwipeButton* button = [MGSwipeButton buttonWithTitle:title backgroundColor:color callback:^BOOL(MGSwipeView *sender) {
-			RCMGSwipeView* rcView = (id)[sender superview];
-			
-			if(rcView.onButtonClickHandler)
-			{
-				rcView.onButtonClickHandler(@{@"side": keyPath, @"index": @(idx)});
-			}
-			
-			[rcView.swipeView hideSwipeAnimated:YES];
-			
-			return NO;
-		}];
+        MGSwipeButton* button = [MGSwipeButton buttonWithTitle:title icon:nil backgroundColor:color labelStyle:labelStyleDict callback:^BOOL(MGSwipeView *sender) {
+            RCMGSwipeView* rcView = (id)[sender superview];
+            
+            if(rcView.onButtonClickHandler)
+            {
+                rcView.onButtonClickHandler(@{@"side": keyPath, @"index": @(idx)});
+            }
+            
+            [rcView.swipeView hideSwipeAnimated:YES];
+            
+            return NO;
+        }];
+
+//		MGSwipeButton* button = [MGSwipeButton buttonWithTitle:title backgroundColor:color callback:^BOOL(MGSwipeView *sender) {
+//			RCMGSwipeView* rcView = (id)[sender superview];
+//			
+//			if(rcView.onButtonClickHandler)
+//			{
+//				rcView.onButtonClickHandler(@{@"side": keyPath, @"index": @(idx)});
+//			}
+//			
+//			[rcView.swipeView hideSwipeAnimated:YES];
+//			
+//			return NO;
+//		}];
 		
 		[newButtons addObject:button];
 	}];

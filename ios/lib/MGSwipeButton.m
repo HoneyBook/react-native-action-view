@@ -78,6 +78,25 @@
     return button;
 }
 
++(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color labelStyle:(NSDictionary*) labelDict callback:(MGSwipeButtonCallback) callback
+{
+    MGSwipeButton * button = [self buttonWithType:UIButtonTypeCustom];
+    NSString* fontFamily = [labelDict objectForKey:@"fontFamily"] ? [labelDict objectForKey:@"fontFamily"] : @"Arial";
+    int fontSize = [labelDict objectForKey:@"fontSize"] ? (int)[labelDict objectForKey:@"fontSize"] : 12;
+    
+    button.backgroundColor = color;
+    button.titleLabel.font = [UIFont fontWithName:fontFamily size:fontSize];
+    button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    button.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    if (icon) {
+        [button setImage:icon forState:UIControlStateNormal];
+    }
+    button.callback = callback;
+    return button;
+}
+
 -(BOOL) callMGSwipeConvenienceCallback: (MGSwipeView *) sender
 {
     if (_callback) {

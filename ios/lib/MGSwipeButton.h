@@ -40,6 +40,7 @@ typedef BOOL(^MGSwipeButtonCallback)(MGSwipeView * sender);
 +(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color callback:(MGSwipeButtonCallback) callback;
 +(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color padding:(NSInteger) padding callback:(MGSwipeButtonCallback) callback;
 +(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color insets:(UIEdgeInsets) insets callback:(MGSwipeButtonCallback) callback;
++(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color labelStyle:(NSDictionary*) labelDict callback:(MGSwipeButtonCallback) callback;
 
 -(void) setPadding:(CGFloat) padding;
 -(void) setEdgeInsets:(UIEdgeInsets)insets;

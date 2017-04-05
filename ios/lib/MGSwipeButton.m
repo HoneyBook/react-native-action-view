@@ -78,7 +78,7 @@
     return button;
 }
 
-+(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color labelStyle:(NSDictionary*) labelDict callback:(MGSwipeButtonCallback) callback
++(instancetype) buttonWithTitle:(NSString *) title icon:(UIImage*) icon backgroundColor:(UIColor *) color insets:(UIEdgeInsets) insets labelStyle:(NSDictionary*) labelDict callback:(MGSwipeButtonCallback) callback
 {
     MGSwipeButton * button = [self buttonWithType:UIButtonTypeCustom];
     NSString* fontFamily = [labelDict objectForKey:@"fontFamily"] ? [labelDict objectForKey:@"fontFamily"] : @"Arial";
@@ -95,6 +95,8 @@
 //        [button setImage:icon forState:UIControlStateNormal];
 //    }
     button.callback = callback;
+    [button setEdgeInsets:insets];
+
     return button;
 }
 

@@ -219,6 +219,11 @@ RCT_CUSTOM_VIEW_PROPERTY(rightButtons, NSArray, RCMGSwipeView)
 	[self _handleButtonsForKeyPath:@"rightButtons" view:view json:json];
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+   return YES;
+}
+
 RCT_REMAP_VIEW_PROPERTY(onButtonTapped, onButtonClickHandler, RCTDirectEventBlock)
 
 - (NSDictionary<NSString *,id> *)constantsToExport

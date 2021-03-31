@@ -2374,8 +2374,8 @@ react-devtools-core@^2.0.8:
     cross-env "^3.1.4"
     ws "^2.0.3"
 
-"react-native-action-view@file:../":
-  version "1.0.4"
+"react-native-action-view@file:..":
+  version "1.0.6"
 
 react-native@0.43.4:
   version "0.43.4"
@@ -3189,8 +3189,8 @@ xpipe@^1.0.5:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
 
 yallist@^2.0.0:
   version "2.1.2"
